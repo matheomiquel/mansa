@@ -1,24 +1,36 @@
 {
   "scripts": {
+    "test": "NODE_ENV=test mocha -r ts-node/register src/test/*test.ts --exit",
+    "migrate_test": "NODE_ENV=test npx sequelize-cli db:migrate",
     "build": "tsc --build ./tsconfig.json",
-    "start": "npm run build && node ./dist",
+    "start": "npm run build && node ./dist/start.js",
     "build:watch": "tsc --build -w ./tsconfig.json",
-    "start:node": "nodemon ./dist/app.js",
-    "start:dev": "nodemon src/app.ts"
+    "start:node": "nodemon ./dist/start.js",
+    "start:dev": "nodemon src/start.ts"
   },
   "dependencies": {
     "@fastify/cors": "^7.0.0",
     "@fastify/swagger": "^6.0.1",
     "@types/bcrypt": "^5.0.0",
+    "@types/mocha": "^9.1.1",
     "@types/node": "^17.0.31",
+    "axios": "^0.25.0",
     "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.0",
     "fastify": "^3.29.0",
     "joi": "^17.6.0",
     "joi-to-swagger": "^6.0.1",
     "knex": "^2.0.0",
+    "mocha": "^10.0.0",
+    "mysql2": "^2.3.3",
     "nodemon": "^2.0.16",
     "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.19.0",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.4"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.4.1"
   }
 }

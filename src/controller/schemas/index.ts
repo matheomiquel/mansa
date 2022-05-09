@@ -1,2 +1,2 @@
-export { RegisterSchema } from './register'
-export { LoginSchema } from './login'
+export { RegisterSchema, RegisterTypeRequest, RegisterTypeResponse } from './register'
+export { LoginSchema, LoginTypeResponse, LoginTypeRequest } from './login'

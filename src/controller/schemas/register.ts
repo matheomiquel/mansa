@@ -1,6 +1,6 @@
 import * as Joi from 'joi'
 import j2s from 'joi-to-swagger';
-import { badRequestSchema, conflictSchema, notFoundSchema } from '../../common'
+import { badRequestSchema, conflictSchema, notFoundSchema } from './schemaError'
 const name = 'Matheo'
 const email = 'matheo@gmail.com'
 const password = 'password12'

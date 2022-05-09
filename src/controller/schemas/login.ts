@@ -1,9 +1,17 @@
 import * as Joi from 'joi'
 import j2s from 'joi-to-swagger';
-import { badRequestSchema, notFoundSchema } from '../../common'
+import { badRequestSchema, notFoundSchema } from './schemaError'
 const name = 'Matheo'
 const email = 'matheo@gmail.com'
 const password = 'password12'
+
+type LoginTypeRequest = {
+    email: string
+    password: string
+}
+type LoginTypeResponse = {
+    name: string
+}
 const LoginSchemaBody = Joi.object({
     email: Joi.string()
         .email()
@@ -66,4 +74,4 @@ const LoginSchema = {
         }
     }
 }
-export { LoginSchema }
+export { LoginSchema, LoginTypeRequest, LoginTypeResponse }
