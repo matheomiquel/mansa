@@ -33,7 +33,7 @@ export class UserService {
                 password: request.body.password
             }
             const result = await this.userDomain.login(userData)
-           
+
             reply
                 .code(200)
                 .send({ name: result.name })
@@ -43,5 +43,8 @@ export class UserService {
                 .code(error.code)
                 .send({ message: error.message })
         }
+    }
+    async healthz(request: FastifyRequest, reply: FastifyReply) {
+        reply.code(204)
     }
 }

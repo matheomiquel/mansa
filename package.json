@@ -1,7 +1,10 @@
 {
   "scripts": {
     "test": "NODE_ENV=test mocha -r ts-node/register src/test/*test.ts --exit",
+    "migrate": "npx sequelize-cli db:migrate",
+    "migrate:undo": "npx sequelize-cli db:migrate:undo:all",
     "migrate_test": "NODE_ENV=test npx sequelize-cli db:migrate",
+    "migrate_test:undo": "NODE_ENV=test npx sequelize-cli db:migrate:undo:all",
     "build": "tsc --build ./tsconfig.json",
     "start": "npm run build && node ./dist/start.js",
     "build:watch": "tsc --build -w ./tsconfig.json",

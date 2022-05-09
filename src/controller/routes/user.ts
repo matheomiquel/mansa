@@ -11,6 +11,8 @@ export class UserRoute {
         app.post('/login', {
             ...LoginSchema,
         }, userService.login.bind({ ...userService }))
+        app.get('/healthz', {
+        }, userService.healthz.bind({ ...userService }))
     }
 
 }
