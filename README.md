@@ -1,4 +1,4 @@
-# TESTs
+# TECHNICAL TEST
 
 ## Start db
 
